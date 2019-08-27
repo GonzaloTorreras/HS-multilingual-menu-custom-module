@@ -1,89 +1,96 @@
 [ {
-  "id" : "2b5f72ac-f597-4e6c-3088-8ec5d34d42a2",
-  "name" : "card",
-  "label" : "Card",
+  "id" : "51918f29-9541-ff79-4094-335fbb6d459e",
+  "name" : "menu_by_lang",
+  "label" : "Menu by language",
   "sortable" : false,
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : 1,
     "max" : null,
-    "sorting_label_field" : "f9736637-449e-fb28-92e3-db33615c7a9a",
-    "default" : 3
+    "sorting_label_field" : "",
+    "default" : 2
   },
-  "hierarchical" : false,
-  "max_depth" : 0,
   "children" : [ {
-    "id" : "854158f8-6ef2-6545-6bac-437c2acddbb1",
-    "name" : "image",
-    "label" : "Image",
+    "id" : "",
+    "name" : "id",
+    "label" : "Add menu",
+    "help_text" : "The menu tree is the page structure which generates the items in the menu. A single menu tree can be used with multiple menus. You can create multiple menus for complex website structures. Menus are created and managed in your Content Settings",
     "sortable" : false,
     "required" : false,
     "locked" : false,
-    "hierarchical" : false,
-    "max_depth" : 0,
-    "resizable" : false,
-    "type" : "image",
-    "default" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    }
+    "type" : "menu",
+    "default" : 0
   }, {
-    "id" : "f9736637-449e-fb28-92e3-db33615c7a9a",
-    "name" : "title",
-    "label" : "Title",
+    "id" : "",
+    "name" : "lang_slug",
+    "label" : "Specify language slug",
+    "help_text" : "Specify the language slug. E.g. NL, EN, FR, ...",
     "sortable" : false,
     "required" : true,
     "locked" : false,
     "validation_regex" : "",
-    "hierarchical" : false,
-    "max_depth" : 0,
+    "placeholder" : "/en",
     "allow_new_line" : false,
+    "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "This is a title"
-  }, {
-    "id" : "48792a2c-3377-4a0a-0070-e1a893ae82b3",
-    "name" : "text",
-    "label" : "Text",
-    "sortable" : false,
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "hierarchical" : false,
-    "max_depth" : 0,
-    "allow_new_line" : false,
-    "type" : "text",
-    "default" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
+    "default" : "en"
   } ],
   "type" : "group",
   "default" : [ {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
+    "id" : 5632770076,
+    "lang_slug" : "en"
   }, {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
-  }, {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
+    "id" : 5632770076,
+    "lang_slug" : "en"
   } ]
+}, {
+  "id" : "",
+  "name" : "root_type",
+  "label" : "Specify type of menu",
+  "help_text" : "Advanced menus show different portions of a menu tree based on which page is being viewed.",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "Select Menu Type",
+  "choices" : [ [ "site_root", "Static - Always show top-level pages in menu" ], [ "top_parent", "Dynamic by section - Show pages in menu that are related to section being viewed" ], [ "parent", "Dynamic by page - Show pages in menu that are related to page being viewed" ], [ "breadcrumb", "Breadcrumb style path menu (uses horizontal flow)" ] ],
+  "type" : "choice",
+  "default" : "site_root"
+}, {
+  "id" : "",
+  "name" : "max_levels",
+  "label" : "Specify number of levels",
+  "help_text" : "Determines the number of menu tree children that can be expanded in the menu",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "Select Max Levels",
+  "choices" : [ [ "1", "1" ], [ "2", "2" ], [ "3", "3" ], [ "4", "4" ], [ "5", "5" ], [ "6", "6" ] ],
+  "type" : "choice",
+  "default" : "2"
+}, {
+  "id" : "",
+  "name" : "flow",
+  "label" : "Set orientation of menu",
+  "help_text" : "Horizontal menus display items side-by-side, and vertical menus are top-to-bottom",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "Select Menu Orientation",
+  "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
+  "type" : "choice",
+  "default" : "horizontal"
+}, {
+  "id" : "",
+  "name" : "flyouts",
+  "label" : "Enable submenu",
+  "help_text" : "Child menu items will appear when you hover over the parent. If unchecked, child menu items will always appear",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "type" : "boolean",
+  "default" : true
 } ]
