@@ -1,15 +1,19 @@
-<div class="cards">
-  {% for card in module.card %}
-  <div class="cards__card card">
-    {% if card.image.src %}
-    <div class="card__image">
-      <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" width="{{ card.image.width }}" height="{{ card.image.height }}">
-    </div>
-    {% endif %}
-    <div class="card__text">
-      <h4>{% inline_text field="title" value="{{ card.title }}" %}</h4>
-      <p>{% inline_text field="text" value="{{ card.text }}" %}</p>
-    </div>
-  </div>
-  {% endfor %}
-</div>
+{# 
+Module name: CM Multilingual Menu
+Module version: 06.02.19
+Copyright 2019 leadstreet.be
+
+This Module add different Menu per language
+#}
+
+{% set final_slug = custom_slug || slug %}
+{% for lang in module.menu_by_lang %}
+  {% if (final_slug is string_startingwith lang.lang_slug) ||  (loop.last and found != 1) %}
+		{% menu id="{{ lang.id }}",
+        root_type="{{ module.root_type }}",
+        flyouts="{{ module.flyouts }}",
+        max_levels="{{ module.max_levels }}",
+        flow="{{ module.flow }}" %}
+		{% set found = 1 %}
+	{% endif %}
+{% endfor %}
