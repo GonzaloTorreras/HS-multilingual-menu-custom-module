@@ -10,7 +10,7 @@
   Loop through all the declared values langs and look for a match comparing with the current slug of the visited page.
   Then display the selected menu (or the last one as default/callback).
 #}
-{% for lang in module.menu_by_lang %}
+{% for lang in module.menu_by_lang -%}
   {% if (slug is string_startingwith lang.lang_slug) ||  (loop.last and found != 1) %}
     {% menu
       id="{{ lang.id }}",
@@ -21,4 +21,4 @@
     %}
     {% set found = 1 %}
   {% endif %}
-{% endfor %}
+{%- endfor %}
